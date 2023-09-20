@@ -1,11 +1,11 @@
 #guessing game -by Adam S 
 from random import randint
 from sys import exit
-ans = randint(1, 100)
 
 
 
 def game():
+    ans = randint(1, 100)
     attempts = 0
     try :
         guess = int(input("Take a guess of the number (1 - 100) you have 10 gueses >  "))
