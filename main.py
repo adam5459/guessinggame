@@ -6,7 +6,7 @@ ans = randint(1, 100)
 
 
 def game():
-    attempts = int
+    attempts = 0
     try :
         guess = int(input("Take a guess of the number (1 - 100) you have 10 gueses >  "))
         attempts +=1
@@ -27,10 +27,10 @@ def game():
             if guess > 100:
                 raise ValueError
             if guess > ans:
-                guess = int(input("Your guess was highter than the answer. \n try again >   "))
+                guess = int(input("Your guess was highter than the aanswer. \n try again >   "))
                 attempts+=1
             else:
-                guess = int(input("Your guess was lower than the answer. \n try again >   "))
+                guess = int(input("Your guess was lower than the aanswer. \n try again >   "))
                 attempts+=1
         except ValueError:
             print("Please only input integers under 100")
@@ -40,7 +40,9 @@ def game():
         playAgain = input('Would you like to play again y/n? >  ')
         attempts = 0 
     return playAgain.lower()
-
+while game() == 'n':
+  exit()
+  
 while game() == 'y':
     game()
 
