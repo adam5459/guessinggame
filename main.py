@@ -22,7 +22,8 @@ def game():
     while guess != ans:
         if attempts > 9:
             print('\n FAIL you took too many attempts \n')
-            exit()
+            playAgain = input('Would you like to play again y/n? >  ')
+            break
         try:
             if guess > 100:
                 raise ValueError
