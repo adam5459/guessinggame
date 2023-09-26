@@ -7,8 +7,17 @@ from sys import exit
 def game():
     ans = randint(1, 100)
     attempts = 0
+    max_attempts = 9
     try :
-        guess = int(input("Take a guess of the number (1 - 100) you have 10 gueses >  "))
+        emh = int(input('Would you like eas mediume or hard(1, 2 ,3)> '))
+        if emh == 1:
+            max_attempts = 14
+        elif emh == 2:
+            max_attempts = 9
+        elif emh == 3:
+            max_attempts = 4
+        
+        guess = int(input(f"Take a guess of the number (1 - 100) you have {max_attempts+1} gueses >  "))
         attempts +=1
     except  UnboundLocalError:
         print("ERROR please only enter a integer")
@@ -20,10 +29,12 @@ def game():
         print("ERROR please only enter a integer")
 
     while guess != ans:
-        if attempts > 9:
+        if attempts > max_attempts:
             print('\n FAIL you took too many attempts \n')
             playAgain = input('Would you like to play again y/n? >  ')
             break
+
+            
         try:
             if guess > 100:
                 raise ValueError
